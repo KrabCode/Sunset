@@ -2,13 +2,6 @@ import processing.core.PApplet;
 import processing.opengl.PShader;
 
 public class MainApp extends PApplet{
-    int cols, rows;
-    int scl = 25;
-    int w = 3500;
-    int h = 1500;
-    float[][] terrain;
-    PShader sun;
-    PShader sea;
 
     public static void main(String[] args) {
         PApplet.main("MainApp");
@@ -17,6 +10,14 @@ public class MainApp extends PApplet{
     public void settings() {
         fullScreen(P3D, 1);
     }
+
+    int cols, rows;
+    int scl = 25;
+    int w = 3500;
+    int h = 1500;
+    float[][] terrain;
+    PShader sun;
+    PShader sea;
 
     public void setup() {
         colorMode(HSB);

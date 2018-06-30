@@ -5,6 +5,7 @@ uniform float mY;
 
 vec3 colorA = vec3(1.,0.,0.);
 vec3 colorB = vec3(0.,0.,1.);
+
 void main(){
     vec2 uv = gl_FragCoord.xy / resolution.xy;
     float pct = abs(.4-uv.y*1.1);
