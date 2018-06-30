@@ -1,8 +1,8 @@
+#define PROCESSING_LINE_SHADER
 uniform vec2 resolution;
 uniform float time;
 uniform float mX;
 uniform float mY;
-
 vec3 colorA = vec3(1, 0, 0);
 vec3 colorB = vec3(.3,.2,.8);
 void main(){

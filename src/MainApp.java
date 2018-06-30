@@ -78,8 +78,9 @@ public class MainApp extends PApplet{
         pushMatrix();
         //sea draw
         shader(sea);
-        fill(0);
-        noStroke();
+//        fill(0);
+        noFill();
+        stroke(0);
         translate(width/2, height/2);
         rotateX(PI/2.5f);
         translate(-w/2,-h/2);
