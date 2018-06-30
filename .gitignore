@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Processing template
+.DS_Store
+applet
+application.linux32
+application.linux64
+application.windows32
+application.windows64
+application.macosx
+
+.idea/description.html
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/project-template.xml
+.idea/template-meta.xml
+.idea/workspace.xml
+L.iml
+libs/
+out/
