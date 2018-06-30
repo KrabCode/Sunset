@@ -1,4 +1,9 @@
-#define PROCESSING_LINE_SHADER
+#ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+
+//#define PROCESSING_LINE_SHADER
 uniform vec2 resolution;
 uniform float time;
 uniform float mX;

@@ -1,3 +1,8 @@
+#ifdef GL_ES
+precision mediump float;
+precision mediump int;
+#endif
+
 uniform vec2 resolution;
 uniform float time;
 uniform float mX;
