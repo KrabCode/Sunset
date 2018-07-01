@@ -17,10 +17,11 @@ public class MainApp extends PApplet{
     }
 
     int cols, rows;
-    int scl = 75;
+    int scl = 15;
     int w = 0;
     int h = 0;
     float[][] terrain;
+
     PShader sun;
     PShader sea;
 
@@ -45,7 +46,7 @@ public class MainApp extends PApplet{
     }
 
     public void draw() {
-        background(0);
+        background(20);
 
         if (frameCount%2==0) {
             //generate the sea elevation values
@@ -71,8 +72,8 @@ public class MainApp extends PApplet{
         shader(sun);
         fill(0);
         noStroke();
-        translate(width/2, -100, -2800);
-        sphere(500);
+        translate(width/2, -600, -2800);
+        sphere(800);
         resetShader();
         popMatrix();
 
@@ -82,9 +83,11 @@ public class MainApp extends PApplet{
         sea.set("time", radians(frameCount));
         sea.set("mX", (float)(mouseX));
         sea.set("mY", (float)(mouseY));
+//        fill(0);
+//        noStroke();
+//        stroke(0);
+//        noFill();
         shader(sea);
-        fill(0, 200);
-        stroke(0);
         translate(width/2, height/2);
         rotateX(PI/2.5f);
         translate(-w/2, -h/2);
@@ -102,6 +105,7 @@ public class MainApp extends PApplet{
         }
         popMatrix();
 
+
         //my phone only
 /*
         resetShader();
@@ -109,13 +113,23 @@ public class MainApp extends PApplet{
         noStroke();
         rect(0,0,width, 57);*/
 
+        if(rec){
+            save("sunset-" + frameCount + ".png");
+        }
     }
 
     float getNoiseAt(float x, float y) {
-        float noiseScl =0.06927548f;
-        //map(mouseX, 0, width, 0.000005f, 1f);
-        float timeScl = map(mouseY, 0, width, 0.01f, 1f);
+        float noiseScl = map(cos(radians(frameCount/3.f)), -1,1, 0.06927548f-.02f, 0.06927548f+.02f);
+        float timeScl = 2;
         return noise(x*noiseScl, y*noiseScl, timeScl*radians(frameCount));
     }
+
+    boolean rec = false;
+    @Override
+    public void keyPressed() {
+        super.keyPressed();
+        rec = !rec;
+    }
+
 
 }
