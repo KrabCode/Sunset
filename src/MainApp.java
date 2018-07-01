@@ -65,7 +65,7 @@ public class MainApp extends PApplet{
 
         //draw sun
         pushMatrix();
-        sun.set("resolution", 800, 600); //haha sun.set, get it? haha
+        sun.set("resolution", 200, 200); //haha sun.set, get it? haha
         sun.set("time", radians(frameCount)*.4f);
         sun.set("mX", (float)(mouseX));
         sun.set("mY", (float)(mouseY));

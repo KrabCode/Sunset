@@ -16,7 +16,7 @@ void main(){
     float pct = abs(1.-uv.y*1.8);
     vec3 color = mix(colorA, colorB, pct);
 
-    if(mod(pow(uv.y, 8) - time/52., .03)<.015){
+    if(mod(pow(uv.y, 8)-time/12. , .15) < .05){
         //color = vec3(1.-color.x, 1.-color.y,1.-color.z);
         color *= .3f;
     }
